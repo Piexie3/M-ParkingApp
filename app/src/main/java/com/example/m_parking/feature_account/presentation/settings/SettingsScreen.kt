@@ -4,7 +4,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material.icons.filled.ArrowForwardIos
 import androidx.compose.material.icons.rounded.*
 import androidx.compose.material3.*
@@ -24,29 +26,51 @@ import androidx.navigation.NavController
 import com.example.m_parking.R
 import com.example.m_parking.navigation.BottomNavItem
 import com.example.m_parking.navigation.BottomNavMenu
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(
     navController: NavController
 ) {
-    Scaffold(bottomBar = {
-        BottomAppBar(
-            modifier = Modifier
-                .height(48.dp),
-            containerColor = if (isSystemInDarkTheme())
-                Color.Black.copy(.24f) else
-                Color.White.copy(
-                    .24f
-                ),
-        ) {
-            BottomNavMenu(selectedItem = BottomNavItem.SETTINGS, navController)
-        }
+    Scaffold(
+        topBar = {
+        TopAppBar(
+            title = {
+                Text(
+                    text = "Settings",
+                    color = MaterialTheme.colorScheme.onBackground,
+                    textAlign = TextAlign.Center,
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 16.sp
+                )
+            },
+            navigationIcon = {
+                IconButton(
+                    onClick = { navController.popBackStack() },
+                    modifier = Modifier.clip(CircleShape),
+                    colors = IconButtonDefaults.iconButtonColors(
+                        containerColor = if (isSystemInDarkTheme()) Color.White.copy(.24f) else Color.Black.copy(
+                            .14f
+                        )
+                    )
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowBackIosNew,
+                        contentDescription = "Back"
+                    )
+                }
+            },
+            colors = TopAppBarDefaults.topAppBarColors(
+                containerColor = Color.Transparent,
+                navigationIconContentColor = Color.Cyan,
+                titleContentColor = Color.Magenta
+            )
+        )
     }) { PaddingValues ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(bottom = PaddingValues.calculateBottomPadding())
+                .padding(top = PaddingValues.calculateTopPadding())
         ) {
-            HeaderText()
             ProfileCardUI()
             GeneralOptionsUi()
             SupportOptionsUi()
@@ -122,8 +146,8 @@ fun ProfileCardUI() {
 @Composable
 fun SupportOptionsUi() {
     Column(modifier = Modifier
-            .padding(horizontal = 14.dp)
-            .padding(top = 10.dp)
+        .padding(horizontal = 14.dp)
+        .padding(top = 10.dp)
     ) {
         Text(
             text = "Support",
@@ -175,7 +199,9 @@ fun SupportSettingsItem(
         onClick = {
             onClick()
         },
-        modifier = Modifier.height(8.dp)
+        modifier = Modifier
+            .wrapContentHeight()
+            .padding(vertical = 4.dp)
     ) {
         Row(
             modifier = Modifier
@@ -189,7 +215,12 @@ fun SupportSettingsItem(
                     modifier = Modifier
                         .size(34.dp)
                         .clip(MaterialTheme.shapes.medium)
-                        .background(MaterialTheme.colorScheme.background.copy(.45f))
+                        .background(
+                            if (isSystemInDarkTheme()) Color.Black.copy(.24f) else Color.White.copy(
+                                .24f
+                            )
+                        ),
+                    contentAlignment = Alignment.Center
                 ) {
                     Icon(
                         imageVector = icon,
@@ -214,12 +245,18 @@ fun SupportSettingsItem(
 
 @Composable
 fun HeaderText() {
-    Row(horizontalArrangement = Arrangement.Center){
+    Row(
+        horizontalArrangement = Arrangement.Center,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 4.dp)
+    ){
         Text(
             text = "Settings",
             color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center,
             modifier = Modifier
+
                 .padding(top = 10.dp, bottom = 5.dp),
             fontWeight = FontWeight.ExtraBold,
             fontSize = 16.sp
@@ -271,7 +308,9 @@ fun GeneralSettingsItem(
         onClick = {
             onClick()
         },
-        modifier = Modifier.height(8.dp)
+        modifier = Modifier
+            .wrapContentHeight()
+            .padding(4.dp)
     ) {
         Row(
             modifier = Modifier
@@ -285,7 +324,12 @@ fun GeneralSettingsItem(
                     modifier = Modifier
                         .size(34.dp)
                         .clip(MaterialTheme.shapes.medium)
-                        .background(MaterialTheme.colorScheme.background.copy(.45f))
+                        .background(
+                            if (isSystemInDarkTheme()) Color.Black.copy(.24f) else Color.White.copy(
+                                .24f
+                            )
+                        ),
+                    contentAlignment = Alignment.Center
                 ) {
                     Icon(
                         imageVector = icon,

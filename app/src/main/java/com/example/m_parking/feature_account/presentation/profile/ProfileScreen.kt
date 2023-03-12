@@ -12,7 +12,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import com.example.m_parking.R
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -23,51 +23,67 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import com.example.m_parking.R
 import com.example.m_parking.core.composables.CustomSwitch
 import com.example.m_parking.core.composables.NavigationRowItem
-import com.example.m_parking.feature_auth.presentation.viewModel.AuthViewModel
+import com.example.m_parking.feature_account.presentation.settings.SupportSettingsItem
+import com.example.m_parking.navigation.Screens
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(
     navController: NavController
 ) {
-    Scaffold(topBar = {
-        TopAppBar(title = {
+    Scaffold(
+        topBar = {
+        TopAppBar(
+            title = {
 
-            Text(
-                text = "My Profile",
-                fontWeight = FontWeight.ExtraBold,
-                style = MaterialTheme.typography.titleLarge
-            )
-        }, navigationIcon = {
-            IconButton(
-                onClick = { navController.popBackStack() },
-                modifier = Modifier.clip(CircleShape),
-                colors = IconButtonDefaults.iconButtonColors(
-                    containerColor = if (isSystemInDarkTheme()) Color.White.copy(.24f) else Color.Black.copy(
-                        .14f
+                Text(
+                    text = "My Profile",
+                    fontWeight = FontWeight.ExtraBold,
+                    style = MaterialTheme.typography.titleLarge
+                )
+            },
+            navigationIcon = {
+                IconButton(
+                    onClick = { navController.popBackStack() },
+                    modifier = Modifier.clip(CircleShape),
+                    colors = IconButtonDefaults.iconButtonColors(
+                        containerColor = if (isSystemInDarkTheme()) Color.White.copy(.24f) else Color.Black.copy(
+                            .14f
+                        )
                     )
-                )
-            ) {
-                Icon(
-                    imageVector = Icons.Default.ArrowBackIosNew,
-                    contentDescription = "Back"
-                )
-            }
-        }, actions = {
-            Button(
-                onClick = { /*TODO*/ },
-                shape = CircleShape,
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = if (isSystemInDarkTheme()) Color.White.copy(.24f) else Color.White.copy(
-                        .24f
-                    ), contentColor = Color.Red.copy(.35f)
-                )
-            ) {
-                Text(text = "Logout")
-            }
-        })
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowBackIosNew,
+                        contentDescription = "Back"
+                    )
+                }
+            },
+            actions = {
+               IconButton(
+                   onClick = {
+                             navController.navigate(Screens.SettingsScreen.route)
+                   },
+
+                   modifier = Modifier.clip(CircleShape),
+                   colors = IconButtonDefaults.iconButtonColors(
+                       containerColor = if (isSystemInDarkTheme()) Color.White.copy(.24f) else Color.Black.copy(
+                           .14f
+                       )
+                   )
+               ) {
+                   Icon(imageVector = Icons.Default.Settings, contentDescription = "Settings")
+               }
+            },
+            colors = TopAppBarDefaults.topAppBarColors(
+
+                containerColor = Color.Transparent,
+                navigationIconContentColor = Color.Cyan,
+                titleContentColor = Color.Magenta
+            )
+        )
     }) { paddingValues ->
         Column(
             modifier = Modifier
@@ -75,20 +91,23 @@ fun ProfileScreen(
                 .padding(10.dp)
                 .fillMaxSize()
         ) {
-            ProfileSection()
+            ProfileSection(navController)
             Spacer(modifier = Modifier.height(8.dp))
             EditProfile()
             Spacer(modifier = Modifier.height(8.dp))
             NavItems()
             Spacer(modifier = Modifier.height(8.dp))
             EnableDarkTheme()
-
+            Spacer(modifier = Modifier.height(8.dp))
+            LogOut()
         }
     }
 }
 
 @Composable
-fun ProfileSection() {
+fun ProfileSection(
+    navController: NavController
+) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
@@ -101,7 +120,7 @@ fun ProfileSection() {
                 modifier = Modifier
                     .clip(CircleShape)
                     .clickable {
-
+                        navController.navigate(Screens.ProfileImageScreen.route)
                     }
                     .size(100.dp)
             )
@@ -167,25 +186,45 @@ fun ProfileSection() {
 }
 
 @Composable
+fun LogOut() {
+    Button(
+        onClick = { /*TODO*/ },
+        shape = CircleShape,
+        colors = ButtonDefaults.buttonColors(
+            containerColor = if (isSystemInDarkTheme()) Color.White.copy(.24f) else Color.White.copy(
+                .24f
+            ), contentColor = Color.Red
+        )
+    ) {
+        Icon(
+            imageVector = Icons.Default.Logout,
+            contentDescription = "LogoutIcon",
+            tint = Color.Red
+        )
+        Spacer(modifier = Modifier.width(4.dp))
+        Text(
+            text = "Logout"
+        )
+    }
+}
+@Composable
 fun NavItems() {
     Column {
-        Spacer(modifier = Modifier.height(8.dp))
-        NavigationRowItem(text = "Payments", leadingIcon = Icons.Default.Payments) {
+        SupportSettingsItem(icon = Icons.Default.Payments, mainText = "Payments") {
 
         }
-        Spacer(modifier = Modifier.height(8.dp))
-        NavigationRowItem(text = "Membership", leadingIcon = Icons.Default.CardMembership) {
+        Spacer(modifier = Modifier.height(4.dp))
+        SupportSettingsItem(icon = Icons.Default.CardMembership, mainText = "MemberShip") {
 
         }
-        Spacer(modifier = Modifier.height(8.dp))
-        NavigationRowItem(text = "Refer & Earn", leadingIcon = Icons.Default.CardGiftcard) {
+        Spacer(modifier = Modifier.height(4.dp))
+        SupportSettingsItem(icon = Icons.Default.CardGiftcard, mainText = "Refer & Earn") {
 
         }
-        Spacer(modifier = Modifier.height(8.dp))
-        NavigationRowItem(text = "Help", leadingIcon = Icons.Default.Help) {
+        Spacer(modifier = Modifier.height(4.dp))
+        SupportSettingsItem(icon = Icons.Default.Help, mainText = "Help") {
 
         }
-        Spacer(modifier = Modifier.height(8.dp))
     }
 }
 

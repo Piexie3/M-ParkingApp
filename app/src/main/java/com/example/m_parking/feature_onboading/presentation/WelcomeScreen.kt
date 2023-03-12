@@ -21,6 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.m_parking.core.utils.OnboadingPage
 import com.example.m_parking.navigation.Screens
@@ -30,7 +31,8 @@ import com.google.accompanist.pager.*
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun WelcomeScreen(
-    navController: NavController
+    navController: NavController,
+    onBoardingViewModel: OnBoardingViewModel = hiltViewModel()
 ) {
     val pages = listOf(
         OnboadingPage.PageOne,
@@ -50,12 +52,15 @@ fun WelcomeScreen(
             activeColor = LightGreen,
             inactiveColor = LightGreen.copy(.2f),
             pagerState = pagerState,
-            modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 40.dp)
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .padding(bottom = 40.dp)
         )
         NextButton(
             modifier = Modifier.align(Alignment.BottomEnd),
             pagerState = pagerState
         ) {
+            onBoardingViewModel.saveOnBoardingState(true)
             navController.popBackStack()
             navController.navigate(Screens.HomeScreen.route)
         }
