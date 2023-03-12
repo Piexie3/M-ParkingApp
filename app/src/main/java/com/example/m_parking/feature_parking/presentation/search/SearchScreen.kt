@@ -1,11 +1,11 @@
-package com.example.m_parking.feature_account.presentation.search
+package com.example.m_parking.feature_parking.presentation.search
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Sort
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
@@ -25,7 +25,7 @@ fun SearchScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Column(verticalArrangement = Arrangement.Center){
+                    Column(verticalArrangement = Arrangement.Center) {
                         Text(
                             text = "Discover",
                             fontFamily = FontFamily.Monospace,
@@ -44,10 +44,17 @@ fun SearchScreen(
                     }
                 },
                 actions = {
-                    IconButton(onClick = { /*TODO*/ }) {
-                        Icon(
-                            imageVector = Icons.Default.Sort,
-                            contentDescription = "Filter"
+                    var clicked by remember {
+                        mutableStateOf(false)
+                    }
+                    IconButton(onClick = {  }){
+                        SortIcon(
+                            onSortIconClicked = { /*TODO*/ },
+                            onSortMenuDismiss = { /*TODO*/ },
+                            onSortItemA2ZClicked = { /*TODO*/ },
+                            onSortItemZ2AClicked = { /*TODO*/ },
+                            onSortItemNoneClicked = { /*TODO*/ },
+                            isSortMenuVisible = clicked
                         )
                     }
                 },
@@ -62,11 +69,7 @@ fun SearchScreen(
             BottomAppBar(
                 modifier = Modifier
                     .height(48.dp),
-                containerColor = if (isSystemInDarkTheme())
-                    Color.Black.copy(.24f) else
-                    Color.White.copy(
-                        .24f
-                    ),
+                containerColor = Color.Transparent
             ) {
                 BottomNavMenu(selectedItem = BottomNavItem.SEARCH, navController)
             }
@@ -96,5 +99,60 @@ fun SearchScreen(
             }
         }
     }
+}
+
+
+@Composable
+fun SortIcon(
+    onSortIconClicked: () -> Unit,
+    onSortMenuDismiss: () -> Unit,
+    onSortItemA2ZClicked: () -> Unit,
+    onSortItemZ2AClicked: () -> Unit,
+    onSortItemNoneClicked: () -> Unit,
+    isSortMenuVisible: Boolean
+) {
+
+    IconButton(
+        onClick = onSortIconClicked
+    ) {
+        Icon(
+            imageVector = Icons.Default.Sort,
+            contentDescription = "Sort Icon",
+            tint = Color.White,
+            modifier = Modifier.size(30.dp)
+        )
+        DropdownMenu(
+            expanded = isSortMenuVisible,
+            onDismissRequest = onSortMenuDismiss
+        ) {
+            DropdownMenuItem(
+                text = {
+                    Text(text = "Sort  A -> Z")
+                },
+                onClick = {
+                    onSortItemA2ZClicked()
+                }
+            )
+            DropdownMenuItem(
+                text = {
+                    Text(text = "Sort  Z -> A")
+                },
+                onClick = {
+                    onSortItemZ2AClicked()
+                }
+            )
+            DropdownMenuItem(
+                text = {
+                    Text(text = "No Sort")
+                },
+                onClick = {
+                    onSortItemNoneClicked()
+                }
+            )
+
+        }
+    }
+
+
 }
 

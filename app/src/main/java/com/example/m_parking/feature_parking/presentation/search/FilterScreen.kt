@@ -5,7 +5,9 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -27,13 +29,23 @@ fun FilterScreen() {
                 .background(
                     if (isSystemInDarkTheme())
                         Color.Black.copy(.24f) else
-                            Color.White.copy(.24f),
+                        Color.White.copy(.24f),
                     shape = MaterialTheme.shapes.extraLarge
                 )
         ) {
-            Column() {
 
-            }
         }
+    }
+}
+
+@Composable
+fun FilterItems(
+    text: String,
+    onClicked: ()-> Unit
+) {
+    Column(
+
+    ) {
+
     }
 }

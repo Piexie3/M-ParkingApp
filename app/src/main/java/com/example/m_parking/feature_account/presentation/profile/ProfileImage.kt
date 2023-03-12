@@ -1,7 +1,5 @@
 package com.example.m_parking.feature_account.presentation.profile
 
-import android.annotation.SuppressLint
-import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -24,7 +22,6 @@ import coil.request.ImageRequest
 import com.example.m_parking.R
 
 @OptIn(ExperimentalMaterial3Api::class)
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun ProfileImageScreen(
     navController: NavController
@@ -58,10 +55,11 @@ fun ProfileImageScreen(
                 )
             )
         }
-    ) {
+    ) {paddingValues->
         Column(
             modifier = Modifier
-                .fillMaxSize(),
+                .fillMaxSize()
+                .padding(top = paddingValues.calculateTopPadding()),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

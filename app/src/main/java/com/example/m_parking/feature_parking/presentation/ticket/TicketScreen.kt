@@ -51,11 +51,7 @@ fun TicketScreen(
             BottomAppBar(
                 modifier = Modifier
                     .height(48.dp),
-                containerColor = if (isSystemInDarkTheme())
-                    Color.Black.copy(.24f) else
-                    Color.White.copy(
-                        .24f
-                    ),
+                containerColor = Color.Transparent
             ) {
                 BottomNavMenu(selectedItem = BottomNavItem.TICKET, navController)
             }
