@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun CustomSwitch(
     checkable: Boolean,
-    checked: Boolean = true,
+    checked: Boolean,
     onCheckedChange: Boolean
 ) {
     Box(

@@ -2,11 +2,13 @@ package com.example.m_parking.feature_parking.presentation.search
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Sort
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -35,7 +37,7 @@ fun SearchScreen(
                         )
                         Spacer(modifier = Modifier.height(4.dp))
                         Text(
-                            text = "Any type of news and article",
+                            text = "Search for any parking lots and price",
                             fontFamily = FontFamily.Monospace,
                             fontWeight = FontWeight.Light,
                             style = MaterialTheme.typography.bodySmall,
@@ -44,24 +46,27 @@ fun SearchScreen(
                     }
                 },
                 actions = {
-                    var clicked by remember {
-                        mutableStateOf(false)
-                    }
-                    IconButton(onClick = {  }){
-                        SortIcon(
-                            onSortIconClicked = { /*TODO*/ },
-                            onSortMenuDismiss = { /*TODO*/ },
-                            onSortItemA2ZClicked = { /*TODO*/ },
-                            onSortItemZ2AClicked = { /*TODO*/ },
-                            onSortItemNoneClicked = { /*TODO*/ },
-                            isSortMenuVisible = clicked
-                        )
-                    }
+                          IconButton(
+                              onClick = { /*TODO*/ },
+                              modifier = Modifier.clip(CircleShape),
+                              colors = IconButtonDefaults.iconButtonColors(
+                                  containerColor = if (isSystemInDarkTheme()) Color.White.copy(.24f) else Color.Black.copy(
+                                      .14f
+                                  )
+                              )
+                          ) {
+                              Icon(imageVector = Icons.Default.Sort, contentDescription = "Sort")
+                          }
+
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = if (isSystemInDarkTheme())
-                        Color.Black.copy(.24f) else
-                        Color.White.copy(.24f)
+
+                    containerColor = Color.Transparent,
+                    actionIconContentColor = Color.Cyan,
+                    navigationIconContentColor = Color.Cyan,
+                    titleContentColor =  if (isSystemInDarkTheme())
+                        Color.White else
+                        Color.Black
                 )
             )
         },

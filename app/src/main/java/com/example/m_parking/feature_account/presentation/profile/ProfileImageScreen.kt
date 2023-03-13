@@ -1,10 +1,10 @@
 package com.example.m_parking.feature_account.presentation.profile
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
+import androidx.compose.material3.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material3.*
@@ -14,11 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import coil.compose.AsyncImage
-import coil.request.ImageRequest
 import com.example.m_parking.R
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -30,7 +29,11 @@ fun ProfileImageScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Text(text = "Profile Image")
+                    Text(
+                        text = "Profile Image",
+                        fontWeight = FontWeight.ExtraBold,
+                        style = MaterialTheme.typography.titleLarge
+                    )
                 },
                 navigationIcon = {
                     IconButton(
@@ -55,7 +58,7 @@ fun ProfileImageScreen(
                 )
             )
         }
-    ) {paddingValues->
+    ) { paddingValues ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -63,17 +66,15 @@ fun ProfileImageScreen(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            AsyncImage(
-                model = ImageRequest.Builder(LocalContext.current)
-                    .data(R.drawable.h)
-                    .crossfade(true)
-                    .build(),
-                contentDescription = null,
+            Image(
+                painter = painterResource(id = R.drawable.h),
+                contentDescription = "Profile",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .height(350.dp)
                     .fillMaxWidth()
             )
         }
+
     }
 }
