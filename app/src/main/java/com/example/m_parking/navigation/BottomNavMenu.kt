@@ -21,7 +21,6 @@ enum class BottomNavItem(val icon: ImageVector, val route: String){
     HOME(Icons.Outlined.Home, Screens.HomeScreen.route),
     TICKET(Icons.Outlined.AirplaneTicket, Screens.TicketScreen.route),
     SEARCH(Icons.Outlined.Search, Screens.SearchScreen.route),
-//    SETTINGS(Icons.Outlined.Settings, Screens.SettingsScreen.route),
     PROFILE(Icons.Outlined.AccountCircle, Screens.ProfileScreen.route),
 
 }
