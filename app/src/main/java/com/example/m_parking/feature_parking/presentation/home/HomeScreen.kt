@@ -37,8 +37,11 @@ fun HomeScreen(
         containerColor = Color.Transparent
     ) {paddingValues->
         Column(
-            modifier = Modifier.fillMaxSize().padding(bottom = paddingValues.calculateBottomPadding())
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(bottom = paddingValues.calculateBottomPadding())
         ){
+            TopApp()
             MapScreen()
         }
     }
