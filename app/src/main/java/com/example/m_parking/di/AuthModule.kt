@@ -1,7 +1,7 @@
-package com.example.m_parking.di
+package com.daematech.m_parking.di
 
-import com.example.m_parking.feature_auth.data.repository.AuthRepositoryImpl
-import com.example.m_parking.feature_auth.domain.repository.AuthRepository
+import com.daematech.m_parking.feature_auth.data.repository.AuthRepositoryImpl
+import com.daematech.m_parking.feature_auth.domain.repository.AuthRepository
 import com.google.firebase.auth.FirebaseAuth
 import dagger.Module
 import dagger.Provides

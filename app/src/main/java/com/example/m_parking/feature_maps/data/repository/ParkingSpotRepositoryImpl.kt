@@ -1,10 +1,10 @@
-package com.example.m_parking.feature_maps.data.repository
+package com.daematech.m_parking.feature_maps.data.repository
 
-import com.example.m_parking.feature_maps.data.ParkingSpotDao
-import com.example.m_parking.feature_maps.data.toParkingSpot
-import com.example.m_parking.feature_maps.data.toParkingSpotEntity
-import com.example.m_parking.feature_maps.domain.model.ParkingSpot
-import com.example.m_parking.feature_maps.domain.repository.ParkingSpotRepository
+import com.daematech.m_parking.feature_maps.data.remote.ParkingSpotDao
+import com.daematech.m_parking.feature_maps.data.toParkingSpot
+import com.daematech.m_parking.feature_maps.data.toParkingSpotEntity
+import com.daematech.m_parking.feature_maps.domain.model.ParkingSpot
+import com.daematech.m_parking.feature_maps.domain.repository.ParkingSpotRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:156006516938:android:78abd3bf9bda4037378c33",
         "android_client_info": {
-          "package_name": "com.example.m_parking"
+          "package_name": "com.daematech.m_parking"
         }
       },
       "oauth_client": [

@@ -1,4 +1,4 @@
-package com.example.m_parking.feature_parking.presentation.ticket
+package com.daematech.m_parking.feature_parking.presentation.ticket
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -18,9 +18,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.m_parking.R
-import com.example.m_parking.navigation.BottomNavItem
-import com.example.m_parking.navigation.BottomNavMenu
+import com.daematech.m_parking.R
+import com.daematech.m_parking.navigation.BottomNavItem
+import com.daematech.m_parking.navigation.BottomNavMenu
 
 
 @OptIn(ExperimentalMaterial3Api::class)

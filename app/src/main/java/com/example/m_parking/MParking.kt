@@ -1,4 +1,4 @@
-package com.example.m_parking
+package com.daematech.m_parking
 
 import android.app.Application
 import androidx.compose.runtime.mutableStateOf

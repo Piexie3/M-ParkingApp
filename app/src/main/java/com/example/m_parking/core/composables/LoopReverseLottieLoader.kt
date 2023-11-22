@@ -1,4 +1,4 @@
-package com.example.m_parking.core.composables
+package com.daematech.m_parking.core.composables
 
 import androidx.annotation.RawRes
 import androidx.compose.runtime.*

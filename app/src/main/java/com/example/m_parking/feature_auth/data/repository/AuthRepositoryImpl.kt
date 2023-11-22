@@ -1,10 +1,10 @@
-package com.example.m_parking.feature_auth.data.repository
+package com.daematech.m_parking.feature_auth.data.repository
 
-import com.example.m_parking.core.utils.Resource
+import com.daematech.m_parking.core.utils.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.userProfileChangeRequest
-import com.example.m_parking.feature_auth.domain.repository.AuthRepository
+import com.daematech.m_parking.feature_auth.domain.repository.AuthRepository
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 

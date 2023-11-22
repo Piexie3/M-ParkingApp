@@ -1,4 +1,4 @@
-package com.example.m_parking.navigation
+package com.daematech.m_parking.navigation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -30,7 +30,7 @@ fun BottomNavMenu(
     selectedItem: BottomNavItem,
     navController: NavController
 ) {
-    Row(){
+    Row {
         for (item in BottomNavItem.values()) {
             Image(
                 imageVector = item.icon,

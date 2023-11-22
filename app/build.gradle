@@ -5,14 +5,15 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'com.google.gms.google-services'
     id 'kotlin-kapt'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
-    namespace 'com.example.m_parking'
+    namespace 'com.daematech.m_parking'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.m_parking"
+        applicationId "com.daematech.m_parking"
         minSdk 21
         targetSdk 33
         versionCode 1
@@ -77,10 +78,10 @@ dependencies {
     // Compose dependencies
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1"
     implementation "androidx.compose.material:material-icons-extended:1.3.1"
-    implementation "com.google.maps.android:maps-compose:1.0.0"
 
     // Google Maps
-    implementation "com.google.android.gms:play-services-maps:18.1.0"
+    implementation 'com.google.maps.android:maps-compose:2.14.0'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
 
 
     kapt "androidx.hilt:hilt-compiler:1.0.0"

@@ -1,4 +1,4 @@
-package com.example.m_parking.feature_account.presentation.profile
+package com.daematech.m_parking.feature_account.presentation.profile
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -18,7 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.m_parking.R
+import com.daematech.m_parking.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

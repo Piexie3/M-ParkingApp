@@ -1,4 +1,4 @@
-package com.example.m_parking
+package com.daematech.m_parking
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,9 +9,9 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.example.m_parking.feature_onboading.presentation.SplashViewModel
-import com.example.m_parking.navigation.NavGraph
-import com.example.m_parking.ui.theme.MParkingTheme
+import com.daematech.m_parking.feature_onboading.presentation.SplashViewModel
+import com.daematech.m_parking.navigation.NavGraph
+import com.daematech.m_parking.ui.theme.MParkingTheme
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

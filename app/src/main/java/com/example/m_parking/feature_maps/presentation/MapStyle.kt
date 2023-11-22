@@ -1,4 +1,4 @@
-package com.example.m_parking.feature_maps.presentation
+package com.daematech.m_parking.feature_maps.presentation
 
 object MapStyle{
     const val json = """

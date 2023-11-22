@@ -1,4 +1,4 @@
-package com.example.m_parking.ui.theme
+package com.daematech.m_parking.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

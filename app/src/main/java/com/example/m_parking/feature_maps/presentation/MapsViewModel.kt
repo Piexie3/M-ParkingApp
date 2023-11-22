@@ -1,12 +1,12 @@
-package com.example.m_parking.feature_maps.presentation
+package com.daematech.m_parking.feature_maps.presentation
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.m_parking.feature_maps.domain.model.ParkingSpot
-import com.example.m_parking.feature_maps.domain.repository.ParkingSpotRepository
+import com.daematech.m_parking.feature_maps.domain.model.ParkingSpot
+import com.daematech.m_parking.feature_maps.domain.repository.ParkingSpotRepository
 import com.google.android.gms.maps.model.MapStyleOptions
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest

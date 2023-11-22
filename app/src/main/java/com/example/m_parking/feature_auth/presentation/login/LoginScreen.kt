@@ -1,4 +1,4 @@
-package com.example.m_parking.feature_auth.presentation.login
+package com.daematech.m_parking.feature_auth.presentation.login
 
 import android.util.Patterns
 import android.widget.Toast
@@ -33,9 +33,9 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.m_parking.core.utils.Resource
-import com.example.m_parking.feature_auth.presentation.viewModel.AuthViewModel
-import com.example.m_parking.navigation.Screens
+import com.daematech.m_parking.core.utils.Resource
+import com.daematech.m_parking.feature_auth.presentation.viewModel.AuthViewModel
+import com.daematech.m_parking.navigation.Screens
 
 
 @Composable
@@ -43,7 +43,7 @@ fun LoginScreen(
     viewModel: AuthViewModel,
     navController: NavController,
 ) {
-    Column() {
+    Column {
         val context = LocalContext.current
         val loginFlow = viewModel.loginFlow.collectAsState()
 
@@ -110,7 +110,8 @@ fun LoginScreen(
                 trailingIcon = {
                     if (email.isNotBlank()) {
                         IconButton(
-                            onClick = { email = "" }) {
+                            onClick = { email = "" },
+                        ) {
                             Icon(
                                 imageVector = Icons.Default.Clear,
                                 contentDescription = "Clear email"
@@ -196,6 +197,7 @@ fun LoginScreen(
                             }
                         }
                     }
+
                     is Resource.Loading -> {
                         CircularProgressIndicator(
                             modifier = Modifier
@@ -207,9 +209,11 @@ fun LoginScreen(
                                 )
                         )
                     }
+
                     is Resource.Error -> {
                         Toast.makeText(context, it.message, Toast.LENGTH_LONG).show()
                     }
+
                     else -> {
 
                     }

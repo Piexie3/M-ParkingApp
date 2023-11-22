@@ -1,14 +1,14 @@
-package com.example.m_parking.feature_onboading.presentation
+package com.daematech.m_parking.feature_onboading.presentation
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.m_parking.feature_auth.domain.repository.AuthRepository
-import com.example.m_parking.feature_auth.presentation.viewModel.AuthViewModel
-import com.example.m_parking.feature_onboading.data.repository.DataStoreRepository
-import com.example.m_parking.navigation.Screens
+import com.daematech.m_parking.feature_auth.domain.repository.AuthRepository
+import com.daematech.m_parking.feature_auth.presentation.viewModel.AuthViewModel
+import com.daematech.m_parking.feature_onboading.data.repository.DataStoreRepository
+import com.daematech.m_parking.navigation.Screens
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -1,4 +1,4 @@
-package com.example.m_parking.feature_account.presentation.settings
+package com.daematech.m_parking.feature_account.presentation.settings
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -23,9 +23,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.m_parking.R
-import com.example.m_parking.navigation.BottomNavItem
-import com.example.m_parking.navigation.BottomNavMenu
+import com.daematech.m_parking.R
+import com.daematech.m_parking.navigation.BottomNavItem
+import com.daematech.m_parking.navigation.BottomNavMenu
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(
@@ -95,7 +95,7 @@ fun ProfileCardUI() {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Column() {
+            Column {
                 Text(
                     text = "Check Your Profile",
                     fontFamily = FontFamily.Serif,

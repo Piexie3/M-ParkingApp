@@ -1,4 +1,4 @@
-package com.example.m_parking.feature_parking.presentation.home
+package com.daematech.m_parking.feature_parking.presentation.home
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
@@ -14,10 +14,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.m_parking.core.composables.SearchBar
-import com.example.m_parking.feature_maps.presentation.MapScreen
-import com.example.m_parking.navigation.BottomNavItem
-import com.example.m_parking.navigation.BottomNavMenu
+import com.daematech.m_parking.core.composables.SearchBar
+import com.daematech.m_parking.feature_maps.presentation.MapScreen
+import com.daematech.m_parking.navigation.BottomNavItem
+import com.daematech.m_parking.navigation.BottomNavMenu
 
 
 @Composable

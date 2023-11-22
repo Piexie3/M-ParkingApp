@@ -1,10 +1,10 @@
-package com.example.m_parking.feature_auth.presentation.viewModel
+package com.daematech.m_parking.feature_auth.presentation.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.m_parking.core.utils.Resource
+import com.daematech.m_parking.core.utils.Resource
 import com.google.firebase.auth.FirebaseUser
-import com.example.m_parking.feature_auth.domain.repository.AuthRepository
+import com.daematech.m_parking.feature_auth.domain.repository.AuthRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

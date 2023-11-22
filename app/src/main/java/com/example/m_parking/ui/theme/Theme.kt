@@ -1,4 +1,4 @@
-package com.example.m_parking.ui.theme
+package com.daematech.m_parking.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -49,6 +49,7 @@ fun MParkingTheme(
     }
 
     MaterialTheme(
+
         colorScheme = colorScheme,
         typography = Typography,
         content = content

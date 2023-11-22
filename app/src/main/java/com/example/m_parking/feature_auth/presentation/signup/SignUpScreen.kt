@@ -28,10 +28,10 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.m_parking.core.utils.Resource
-import com.example.m_parking.feature_auth.presentation.viewModel.AuthViewModel
-import com.example.m_parking.navigation.Screens
-import com.example.m_parking.ui.theme.LightGreen
+import com.daematech.m_parking.core.utils.Resource
+import com.daematech.m_parking.feature_auth.presentation.viewModel.AuthViewModel
+import com.daematech.m_parking.navigation.Screens
+import com.daematech.m_parking.ui.theme.LightGreen
 
 @Composable
 fun SignUpScreen(
@@ -39,7 +39,7 @@ fun SignUpScreen(
     navController: NavController
 ) {
     val signUpFlow = viewModel.signUpFlow.collectAsState()
-    Column() {
+    Column {
         var userName by remember {
             mutableStateOf("")
         }

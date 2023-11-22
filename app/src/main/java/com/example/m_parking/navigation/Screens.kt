@@ -1,4 +1,4 @@
-package com.example.m_parking.navigation
+package com.daematech.m_parking.navigation
 
 sealed class Screens(val route: String) {
     object HomeScreen : Screens("Home_screen")

@@ -1,4 +1,4 @@
-package com.example.m_parking.feature_maps.domain.model
+package com.daematech.m_parking.feature_maps.domain.model
 
 import androidx.room.PrimaryKey
 

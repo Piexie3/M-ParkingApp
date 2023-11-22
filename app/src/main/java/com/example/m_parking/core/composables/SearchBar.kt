@@ -1,4 +1,4 @@
-package com.example.m_parking.core.composables
+package com.daematech.m_parking.core.composables
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background

@@ -1,4 +1,4 @@
-package com.example.m_parking
+package com.daematech.m_parking
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.m_parking", appContext.packageName)
+        assertEquals("com.daematech.m_parking", appContext.packageName)
     }
 }

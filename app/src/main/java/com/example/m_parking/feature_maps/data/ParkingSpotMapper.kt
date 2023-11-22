@@ -1,6 +1,7 @@
-package com.example.m_parking.feature_maps.data
+package com.daematech.m_parking.feature_maps.data
 
-import com.example.m_parking.feature_maps.domain.model.ParkingSpot
+import com.daematech.m_parking.feature_maps.data.remote.ParkingSpotEntity
+import com.daematech.m_parking.feature_maps.domain.model.ParkingSpot
 
 fun ParkingSpotEntity.toParkingSpot(): ParkingSpot {
     return ParkingSpot(

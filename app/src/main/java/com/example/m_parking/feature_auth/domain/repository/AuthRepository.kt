@@ -1,6 +1,6 @@
-package com.example.m_parking.feature_auth.domain.repository
+package com.daematech.m_parking.feature_auth.domain.repository
 
-import com.example.m_parking.core.utils.Resource
+import com.daematech.m_parking.core.utils.Resource
 import com.google.firebase.auth.FirebaseUser
 
 interface AuthRepository {

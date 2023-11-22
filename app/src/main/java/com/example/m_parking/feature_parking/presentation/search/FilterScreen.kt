@@ -1,4 +1,4 @@
-package com.example.m_parking.feature_parking.presentation.search
+package com.daematech.m_parking.feature_parking.presentation.search
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -43,9 +43,7 @@ fun FilterItems(
     text: String,
     onClicked: ()-> Unit
 ) {
-    Column(
-
-    ) {
+    Column {
 
     }
 }

@@ -1,6 +1,6 @@
-package com.example.m_parking.feature_maps.domain.repository
+package com.daematech.m_parking.feature_maps.domain.repository
 
-import com.example.m_parking.feature_maps.domain.model.ParkingSpot
+import com.daematech.m_parking.feature_maps.domain.model.ParkingSpot
 import kotlinx.coroutines.flow.Flow
 
 interface ParkingSpotRepository {

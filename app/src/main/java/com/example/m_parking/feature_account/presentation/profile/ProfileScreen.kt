@@ -1,4 +1,4 @@
-package com.example.m_parking.feature_account.presentation.profile
+package com.daematech.m_parking.feature_account.presentation.profile
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -23,11 +23,11 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.example.m_parking.R
-import com.example.m_parking.core.composables.CustomSwitch
-import com.example.m_parking.core.composables.NavigationRowItem
-import com.example.m_parking.feature_account.presentation.settings.SupportSettingsItem
-import com.example.m_parking.navigation.Screens
+import com.daematech.m_parking.R
+import com.daematech.m_parking.core.composables.CustomSwitch
+import com.daematech.m_parking.core.composables.NavigationRowItem
+import com.daematech.m_parking.feature_account.presentation.settings.SupportSettingsItem
+import com.daematech.m_parking.navigation.Screens
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

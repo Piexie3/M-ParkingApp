@@ -1,4 +1,4 @@
-package com.example.m_parking.core.composables
+package com.daematech.m_parking.core.composables
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -29,7 +29,7 @@ fun NavigationRowItem(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Box(contentAlignment = Alignment.Center, modifier = Modifier.wrapContentHeight()) {
-            Row() {
+            Row {
                 Icon(imageVector = leadingIcon, contentDescription = null)
                 Spacer(modifier = Modifier.width(10.dp))
                 Text(

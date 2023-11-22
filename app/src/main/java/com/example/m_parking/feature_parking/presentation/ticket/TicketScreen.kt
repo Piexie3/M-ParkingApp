@@ -1,4 +1,4 @@
-package com.example.m_parking.feature_parking.presentation.ticket
+package com.daematech.m_parking.feature_parking.presentation.ticket
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
@@ -14,10 +14,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.m_parking.navigation.BottomNavItem
-import com.example.m_parking.navigation.BottomNavMenu
-import com.example.m_parking.navigation.Screens
-import com.example.m_parking.ui.theme.MParkingTheme
+import com.daematech.m_parking.navigation.BottomNavItem
+import com.daematech.m_parking.navigation.BottomNavMenu
+import com.daematech.m_parking.navigation.Screens
+import com.daematech.m_parking.ui.theme.MParkingTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -204,7 +204,7 @@ fun TicketCard(
 @Preview(showSystemUi = true)
 @Composable
 fun TickCardPrev() {
-    MParkingTheme() {
+    MParkingTheme {
         TicketCard {
 
         }

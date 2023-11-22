@@ -1,4 +1,4 @@
-package com.example.m_parking.feature_onboading.presentation
+package com.daematech.m_parking.feature_onboading.presentation
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.Image
@@ -23,9 +23,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.example.m_parking.core.utils.OnboadingPage
-import com.example.m_parking.navigation.Screens
-import com.example.m_parking.ui.theme.LightGreen
+import com.daematech.m_parking.core.utils.OnboadingPage
+import com.daematech.m_parking.navigation.Screens
+import com.daematech.m_parking.ui.theme.LightGreen
 import com.google.accompanist.pager.*
 
 @OptIn(ExperimentalPagerApi::class)
@@ -85,10 +85,11 @@ fun PagerScreen(
             modifier = Modifier
                 .align(Alignment.Center)
                 .padding(horizontal = 20.dp)
+
                 .clip(
                     RoundedCornerShape(20.dp)
                 )
-                .background(Color.White.copy(.24f))
+                .background(Color.White.copy(.4f))
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -105,9 +106,10 @@ fun PagerScreen(
                     text = onBoardingPage.description,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 30.dp),
+
+                        .padding(horizontal = 30.dp, vertical = 30.dp),
                     fontSize = MaterialTheme.typography.titleSmall.fontSize,
-                    fontWeight = FontWeight.Medium,
+                    fontWeight = FontWeight.W700,
                     textAlign = TextAlign.Center
                 )
             }
@@ -127,6 +129,7 @@ fun NextButton(
             visible = pagerState.currentPage == 2,
             modifier = Modifier
                 .align(Alignment.BottomEnd)
+                .padding(30.dp)
                 .clip(CircleShape),
             enter = fadeIn() + expandHorizontally(),
             exit = shrinkHorizontally() + fadeOut()

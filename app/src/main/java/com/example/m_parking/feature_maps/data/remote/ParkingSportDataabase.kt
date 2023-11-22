@@ -1,4 +1,4 @@
-package com.example.m_parking.feature_maps.data
+package com.daematech.m_parking.feature_maps.data.remote
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

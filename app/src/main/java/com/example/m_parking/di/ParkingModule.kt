@@ -1,12 +1,12 @@
-package com.example.m_parking.di
+package com.daematech.m_parking.di
 
 import android.app.Application
 import android.content.Context
 import androidx.room.Room
-import com.example.m_parking.feature_maps.data.ParkingSportDatabase
-import com.example.m_parking.feature_maps.data.repository.ParkingSpotRepositoryImpl
-import com.example.m_parking.feature_maps.domain.repository.ParkingSpotRepository
-import com.example.m_parking.feature_onboading.data.repository.DataStoreRepository
+import com.daematech.m_parking.feature_maps.data.remote.ParkingSportDatabase
+import com.daematech.m_parking.feature_maps.data.repository.ParkingSpotRepositoryImpl
+import com.daematech.m_parking.feature_maps.domain.repository.ParkingSpotRepository
+import com.daematech.m_parking.feature_onboading.data.repository.DataStoreRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
